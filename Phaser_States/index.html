@@ -7,9 +7,17 @@
 				margin: 0
 			}
 		</style>
-		<script>
+		<script src="//cdn.jsdelivr.net/phaser-ce/2.7.3/phaser.js"></script>
+        
+        <script>
 			(function() {
-				var game = new Phaser.Game(320, 480, Phaser.CANVAS, "game");
+				var game = new Phaser.Game(500, 500, Phaser.CANVAS, "game");
+                var game = new Phaser.Game(800, 600, Phaser.AUTO);
+game.state.add('Boot', BasicGame.Boot);
+game.state.add('Preloader', BasicGame.Preloader);
+game.state.add('MainMenu', BasicGame.MainMenu);
+game.state.add('Game', BasicGame.Game);
+game.state.start('Boot');
 
 			}) ();
 		</script>
